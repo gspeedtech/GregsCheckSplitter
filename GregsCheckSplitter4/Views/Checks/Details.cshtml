@@ -1,0 +1,83 @@
+﻿@model GregsCheckSplitter4.Models.Check
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Check</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckTaxTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckTaxTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckTipTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckTipTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckGrandTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckGrandTotal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Check Details", "Edit", new { id = Model.CheckID }) |
+    @Html.ActionLink("Back to List", "Index")|
+    @Html.ActionLink("View/Edit Parties", "Index", "Parties", new { id = Model.CheckID }, null)
+</p>

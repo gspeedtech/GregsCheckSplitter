@@ -1,0 +1,71 @@
+﻿@model IEnumerable<GregsCheckSplitter4.Models.Check>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Checks</h2>
+
+<p>
+    @Html.ActionLink("Parties", "Index", "Parties")
+    @Html.ActionLink("Diners", "Index", "Diners")
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxPercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckTaxTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipPercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckTipTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckGrandTotal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxPercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckTaxTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipPercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckTipTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckGrandTotal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CheckID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CheckID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CheckID })
+        </td>
+    </tr>
+}
+
+</table>

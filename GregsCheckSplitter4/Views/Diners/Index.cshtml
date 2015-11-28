@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GregsCheckSplitter4.Models.Diner>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Diners</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <br />
+    @Html.ActionLink("Back To Check", "Index", "Checks", new { id = 1 }, null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinerEntree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinerDrink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinerDessert)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinerAppetizer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinerTotal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinerEntree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinerDrink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinerDessert)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinerAppetizer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinerTotal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DinerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DinerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DinerID })
+        </td>
+    </tr>
+}
+
+</table>

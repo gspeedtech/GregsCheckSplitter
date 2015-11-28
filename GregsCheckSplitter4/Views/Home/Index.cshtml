@@ -1,0 +1,72 @@
+﻿@model IEnumerable<GregsCheckSplitter4.Models.Check>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Split Check</h1>
+    <p class="lead">Select a previous check or create a new one</p>
+</div>
+<div class="col-md-4">
+
+</div>
+<div class="col-md-4">
+    <br />
+    @Html.ActionLink("Create New", "Create", "Checks")
+    <br />
+</div>
+<br />
+<br />
+<div class="col-md-4">
+
+</div>
+
+<div class="row">
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckTaxTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckTipTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckGrandTotal)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckTaxTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckTipTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckGrandTotal)
+                </td>
+                <td>
+                    @Html.ActionLink("-->", "Details", "Checks", new { id = item.CheckID }, null)                    
+                </td>
+            </tr>
+        }
+    </table>
+   
+
+</div>
